@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.410c3619.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.6c9851b4.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.8d215e58.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.cb3810fa.js",
+    "static/js/449.a32d0693.chunk.js": "/goit-react-hw-08-phonebook/static/js/449.a32d0693.chunk.js",
+    "static/js/649.af368b66.chunk.js": "/goit-react-hw-08-phonebook/static/js/649.af368b66.chunk.js",
+    "static/js/989.fbf3371d.chunk.js": "/goit-react-hw-08-phonebook/static/js/989.fbf3371d.chunk.js",
+    "static/js/717.d3e04f56.chunk.js": "/goit-react-hw-08-phonebook/static/js/717.d3e04f56.chunk.js",
+    "static/js/895.27a8eeb4.chunk.js": "/goit-react-hw-08-phonebook/static/js/895.27a8eeb4.chunk.js",
+    "static/media/imageBg.png": "/goit-react-hw-08-phonebook/static/media/imageBg.174a3f6b94bd3e409c34.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.410c3619.css.map": "/goit-react-hw-08-phonebook/static/css/main.410c3619.css.map",
-    "main.6c9851b4.js.map": "/goit-react-hw-08-phonebook/static/js/main.6c9851b4.js.map"
+    "main.8d215e58.css.map": "/goit-react-hw-08-phonebook/static/css/main.8d215e58.css.map",
+    "main.cb3810fa.js.map": "/goit-react-hw-08-phonebook/static/js/main.cb3810fa.js.map",
+    "449.a32d0693.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/449.a32d0693.chunk.js.map",
+    "649.af368b66.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/649.af368b66.chunk.js.map",
+    "989.fbf3371d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/989.fbf3371d.chunk.js.map",
+    "717.d3e04f56.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/717.d3e04f56.chunk.js.map",
+    "895.27a8eeb4.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/895.27a8eeb4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.410c3619.css",
-    "static/js/main.6c9851b4.js"
+    "static/css/main.8d215e58.css",
+    "static/js/main.cb3810fa.js"
   ]
 }
