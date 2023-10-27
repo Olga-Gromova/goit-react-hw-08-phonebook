@@ -12,6 +12,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 
+
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -21,6 +22,8 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const toast = useToast();
+
+
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -90,10 +93,10 @@ export const ContactForm = () => {
     <Box
       as="form"
       maxWidth="660px"
-      h="380px"
+      h="350px"
       width="50%"
-      border="1px"
-      borderColor="#000"
+      // border="1px"
+      // borderColor="#000"
       padding="24px"
       onSubmit={handleSubmit}
       textAlign="center"

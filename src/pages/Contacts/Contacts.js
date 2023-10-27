@@ -6,7 +6,7 @@ import { selectError } from 'redux/contacts/selectors';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { Box, Flex, Heading, Container } from '@chakra-ui/react';
+import { Box, Heading, Container } from '@chakra-ui/react';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -21,21 +21,36 @@ export default function Contacts() {
       <Container maxW="100%" marginX="auto" paddingX="44px" bg="#F1F1F1">
         <Heading
           align="center"
-          mb="44px"
+          mb="20px"
           fontFamily="Merriweather Sans"
           fontWeight={400}
           fontSize="36px"
         >
           Phonebook
         </Heading>
-        <Flex gap="32px" justify="space-between">
-          <ContactForm />
+        <Box 
+        gap="20px" 
+        justifyItems="center"
+        display="grid"        
+        >
+
+        <Heading
+          align="center"
+          
+          fontFamily="Merriweather Sans"
+          fontWeight={400}
+          fontSize="30px"
+        >
+          Please, input new name & number
+          
+        </Heading>
+         <ContactForm /> 
           <Box
             border="1px"
             borderColor="#000"
             padding="20px"
             width="50%"
-            h="380px"
+            
           >
             <Heading
               align="center"
@@ -52,7 +67,7 @@ export default function Contacts() {
               <ContactList />
             </Box>
           </Box>
-        </Flex>
+        </Box>
       </Container>
     </Box>
   );

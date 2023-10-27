@@ -11,10 +11,12 @@ import {
 } from '@chakra-ui/react';
 import { selectError, selectIsLoading } from 'redux/auth/selectors';
 
+
 export const LoginForm = () => {
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,7 +30,7 @@ export const LoginForm = () => {
       );
     form.reset();
   };
-
+ 
   return (
     <Box
       as="form"

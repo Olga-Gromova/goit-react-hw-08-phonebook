@@ -2,8 +2,11 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { Box, FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
 
+
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
+
+  
 
   const handleSubmit = e => {
     e.preventDefault();

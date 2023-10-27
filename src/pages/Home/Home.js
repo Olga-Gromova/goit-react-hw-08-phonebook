@@ -2,9 +2,15 @@ import imageBg from '../../media/imageBg.png';
 import { useSelector } from 'react-redux';
 import { Box, Heading, Flex, Spinner } from '@chakra-ui/react';
 import { selectIsLoading } from 'redux/contacts/selectors';
+import { useMediaQuery } from 'react-responsive';
 
 export default function HomePage() {
   const isLoading = useSelector(selectIsLoading);
+ 
+  
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
+
+
   return (
     <>
       {isLoading ? (
@@ -30,7 +36,9 @@ export default function HomePage() {
         backgroundImage={imageBg}
         backgroundPosition="center"
         backgroundRepeat="no-repet"
-        backgroundSize="cover">
+        backgroundSize="cover"
+        
+        >
           <Heading
             as="h1"
             position="absolute"
@@ -39,6 +47,7 @@ export default function HomePage() {
             color="#192655"
             fontFamily="Merriweather Sans"
             textShadow= "0 0 7px #fFF,0 0 10px #fFF,0 0 21px #fFF,0 0 42px #2dd6f4,0 0 82px #2dd6f4,0 0 92px #2dd6f4,0 0 102px #2dd6f4,0 0 151px #2dd6f4"
+            width={isTabletOrMobile ? '50%' : '100%'}
           >
             Welcome to contact book
           </Heading>
