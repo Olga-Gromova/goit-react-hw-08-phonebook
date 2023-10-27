@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f0f0;
-  color: #2b184d;
+  background-color: #cdf1f5;
+  color: #192655;
 }
 
 code {
@@ -19,4 +19,11 @@ ol,
 li {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
