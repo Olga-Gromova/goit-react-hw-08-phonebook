@@ -11,19 +11,21 @@ import {
   CircularProgress,
   useToast,
 } from '@chakra-ui/react';
-
+import { useMediaQuery } from 'react-responsive';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const contacts = useSelector(selectContacts);
   const isContactAdded = useSelector(selectIsContactAdded);
   const dispatch = useDispatch();
-
   const toast = useToast();
 
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
 
+  const isNumberDublicated = number => {
+    return contacts.some(contact => contact.number === number);
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -43,9 +45,26 @@ export const ContactForm = () => {
             bg="#e84a5f"
             borderRadius="10px"
             textAlign="center"
-            
           >
             {name} is already in contacts
+          </Box>
+        ),
+      });
+      return;
+    }
+
+    if (isNumberDublicated(number)) {
+      toast({
+        position: 'top-right',
+        render: () => (
+          <Box
+            color="white"
+            p={3}
+            bg="#e84a5f"
+            borderRadius="10px"
+            textAlign="center"
+          >
+            {number} is already in contacts
           </Box>
         ),
       });
@@ -60,7 +79,7 @@ export const ContactForm = () => {
             p={3}
             bg="#188C69"
             borderRadius="10px"
-            textAlign="center"        
+            textAlign="center"
           >
             The new contact was created!
           </Box>
@@ -93,19 +112,18 @@ export const ContactForm = () => {
     <Box
       as="form"
       maxWidth="660px"
-      h="350px"
       width="50%"
-      // border="1px"
-      // borderColor="#000"
-      padding="24px"
+      minWidth="300px"
+      padding="10px"
       onSubmit={handleSubmit}
       textAlign="center"
     >
       <FormControl isRequired mb="32px">
         <FormLabel
           fontFamily="Merriweather Sans"
-          fontWeight={300}
-          fontSize="24px"
+          fontWeight={400}
+          fontSize={isTabletOrMobile ? '18px' : '24px'}
+          color="#497a86"
         >
           Name
         </FormLabel>
@@ -127,8 +145,9 @@ export const ContactForm = () => {
       <FormControl isRequired mb="32px">
         <FormLabel
           fontFamily="Merriweather Sans"
-          fontWeight={300}
-          fontSize="24px"
+          fontWeight={400}
+          fontSize={isTabletOrMobile ? '18px' : '24px'}
+          color="#497a86"
         >
           Number
         </FormLabel>
@@ -148,14 +167,15 @@ export const ContactForm = () => {
       </FormControl>
       <Button
         fontFamily="Merriweather Sans"
-        fontWeight={300}
-        fontSize="20px"
+        fontWeight="bold"
+        fontSize="18px"
         type="submit"
         paddingX="20px"
         paddingY="12px"
         w="160px"
         borderColor="#89d3da"
         borderWidth="1px"
+        color="#192655"
         _hover={{ bg: '#0cc0df', borderColor: 'transparent', color: '#fff' }}
       >
         {!isContactAdded ? (

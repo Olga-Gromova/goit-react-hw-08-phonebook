@@ -13,7 +13,6 @@ import {
   anyRejectedReducer,
 } from './authSliceReducers';
 
-
 const initialState = {
   user: { name: null, email: null },
   token: null,

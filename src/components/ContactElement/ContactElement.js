@@ -1,24 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import PropTypes from 'prop-types';
-import {
-  Flex,
-  HStack,
-  VStack,
-  Avatar,
-  Text,
-  Button,
-} from '@chakra-ui/react';
+import { Flex, HStack, VStack, Avatar, Text, Button } from '@chakra-ui/react';
 
 export const ContactElement = ({ id, name, number }) => {
   const dispatch = useDispatch();
-
-
   const handleDelete = () => dispatch(deleteContact(id));
   const firstLetter = name.charAt(0);
 
   return (
-    <Flex as='li'
+    <Flex
+      as="li"
       borderBottom="1px"
       paddingY="8px"
       justify="space-between"
@@ -28,21 +19,16 @@ export const ContactElement = ({ id, name, number }) => {
         <Avatar
           name={firstLetter}
           color="#000"
-          w="60px"
-          h="60px"
+          w="50px"
+          h="50px"
           borderRadius="50%"
-          bg="#D9D9D9"
+          bg="#abe1e8"
         />
         <VStack justify="flex-start" align="self-start">
-          <Text fontFamily="Merriweather Sans" fontWeight={300} fontSize="16px">
+          <Text fontFamily="Merriweather Sans" fontWeight={300} fontSize="18px">
             {name}
           </Text>
-          <Text
-            fontFamily="Merriweather Sans"
-            fontWeight={300}
-            fontSize="16px"
-            mt="10px"
-          >
+          <Text fontFamily="Merriweather Sans" fontWeight={300} fontSize="18px">
             {number}
           </Text>
         </VStack>
@@ -59,10 +45,3 @@ export const ContactElement = ({ id, name, number }) => {
     </Flex>
   );
 };
-
-ContactElement.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-};
-

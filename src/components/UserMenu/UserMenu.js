@@ -16,25 +16,20 @@ export const UserMenu = () => {
       <Text
         as="span"
         fontFamily="Montserrat Alternates"
-        fontSize={isTabletOrMobile ? '18px' :'24px'}
+        fontSize={isTabletOrMobile ? '18px' : '24px'}
         color="#192655"
         fontWeight={'bold'}
       >
         Welcome, {user.name}!
       </Text>
-      <Avatar 
-      // width={isTableOrMobile ? '24px' : '36px'}
-      // height={isTableOrMobile ? '24px' : '36px'}
-      w="36px" h="36px" 
-      />
+      <Avatar bg="#abe1e8" w="36px" h="36px" />
       <Button
         type="button"
         onClick={handleLogOut}
         fontFamily="Merriweather Sans"
-        fontSize={isTabletOrMobile ? '18px' :'24px'}
+        fontSize={isTabletOrMobile ? '18px' : '24px'}
         fontWeight={'bold'}
-        borderColor="#89d3da"
-        borderWidth="1px"
+        colorScheme="blue"
         _hover={{ bg: '#0cc0df', borderColor: 'transparent', color: '#fff' }}
       >
         Log out

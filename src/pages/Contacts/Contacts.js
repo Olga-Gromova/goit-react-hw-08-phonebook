@@ -1,71 +1,104 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectError } from 'redux/contacts/selectors';
-
+import {
+  selectError,
+  selectIsLoading,
+  selectContacts,
+} from 'redux/contacts/selectors';
+import emptyImg from '../../media/emptyImg.png';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { Box, Heading, Container } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Container,
+  CircularProgress,
+  Text,
+  Image,
+  Center,
+} from '@chakra-ui/react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Contacts() {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
+  const contacts = useSelector(selectContacts);
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <Box as="main" paddingY="20px" bg="#F1F1F1" h="100vh">
-      <Container maxW="100%" marginX="auto" paddingX="44px" bg="#F1F1F1">
+    <Box as="main" paddingY="10px" bg="#FDF8D7" h="100vh">
+      <Container maxW="100%" marginX="auto" paddingX="44px" bg="#FDF8D7">
         <Heading
           align="center"
-          mb="20px"
+          mb="10px"
           fontFamily="Merriweather Sans"
           fontWeight={400}
-          fontSize="36px"
+          fontSize={isTabletOrMobile ? '24px' : '30px'}
+          color="#497a86"
         >
-          Phonebook
+          Welcom in your Personal Phonebook
         </Heading>
-        <Box 
-        gap="20px" 
-        justifyItems="center"
-        display="grid"        
-        >
-
-        <Heading
-          align="center"
-          
-          fontFamily="Merriweather Sans"
-          fontWeight={400}
-          fontSize="30px"
-        >
-          Please, input new name & number
-          
-        </Heading>
-         <ContactForm /> 
-          <Box
-            border="1px"
-            borderColor="#000"
-            padding="20px"
-            width="50%"
-            
+        <Box gap="5px" justifyItems="center" display="grid">
+          <Heading
+            align="center"
+            fontFamily="Merriweather Sans"
+            fontWeight={400}
+            fontSize={isTabletOrMobile ? '26px' : '28px'}
+            color="#497a86"
           >
+            Please, input name & number for a creation a new contact
+          </Heading>
+          <ContactForm />
+          <Box padding="10px" maxWidth="660px" minWidth="300px">
             <Heading
               align="center"
               fontFamily="Merriweather Sans"
               fontWeight={400}
-              fontSize="32px"
-              mb="20px"
+              fontSize={isTabletOrMobile ? '26px' : '28px'}
+              mb="10px"
+              color="#497a86"
             >
               Contacts
             </Heading>
-            <Filter />
-            {error && <p>Something goes wrong</p>}
-            <Box overflowY="auto" h="230px" >
-              <ContactList />
-            </Box>
+            {contacts?.length === 0 ? (
+              <Center flexDirection="column">
+                <Text
+                  fontWeight="bold"
+                  color="#89d3da"
+                  fontFamily="Merriweather Sans"
+                  fontSize={isTabletOrMobile ? '18px' : '24px'}
+                  mb="10px"
+                >
+                  ...Here is empty
+                </Text>
+                <Image src={emptyImg} alt="empty image" boxSize="150px" />
+              </Center>
+            ) : (
+              <div>
+                {isLoading && (
+                  <CircularProgress
+                    isIndeterminate
+                    size="24px"
+                    color="#0cc0df"
+                  />
+                )}
+                {!isLoading && contacts.length > 0 && <Filter />}
+
+                {error && <p>Something goes wrong</p>}
+                {!isLoading && contacts.length > 0 && (
+                  <Box overflowY="auto" h="230px">
+                    <ContactList />
+                  </Box>
+                )}
+              </div>
+            )}
           </Box>
         </Box>
       </Container>

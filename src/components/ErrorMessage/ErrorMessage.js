@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Box, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 
 export const ErrorMessage = ({ message }) => {
@@ -10,8 +9,4 @@ export const ErrorMessage = ({ message }) => {
       </Alert>
     </Box>
   );
-};
-
-ErrorMessage.propTypes = {
-  message: PropTypes.string.isRequired,
 };

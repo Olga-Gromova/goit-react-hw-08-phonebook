@@ -11,26 +11,24 @@ import {
 } from '@chakra-ui/react';
 import { selectError, selectIsLoading } from 'redux/auth/selectors';
 
-
 export const LoginForm = () => {
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
-
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
 
-      dispatch(
-        logIn({
-          email: form.elements.email.value,
-          password: form.elements.password.value,
-        })
-      );
+    dispatch(
+      logIn({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
     form.reset();
   };
- 
+
   return (
     <Box
       as="form"
@@ -47,8 +45,8 @@ export const LoginForm = () => {
           name="email"
           borderColor="#89d3da"
           borderWidth="1px"
-          bg="#fff"     
-          autoComplete="email"     
+          bg="#fff"
+          autoComplete="email"
         />
       </FormControl>
       <FormControl isRequired>
