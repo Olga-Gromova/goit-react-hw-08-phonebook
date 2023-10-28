@@ -1,4 +1,4 @@
-import imageBg from '../../media/imageBg.png';
+import imageBg from '../../images/imageBg.png';
 import { useSelector } from 'react-redux';
 import { Box, Heading, Flex, Spinner } from '@chakra-ui/react';
 import { selectIsLoading } from 'redux/contacts/selectors';

@@ -6,7 +6,7 @@ import {
   selectIsLoading,
   selectContacts,
 } from 'redux/contacts/selectors';
-import emptyImg from '../../media/emptyImg.png';
+import emptyImg from '../../images/emptyImg.png';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
