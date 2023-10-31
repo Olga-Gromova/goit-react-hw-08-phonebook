@@ -5,12 +5,12 @@ import { useMediaQuery } from 'react-responsive';
 export const AuthNav = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
   return (
-    <HStack spacing={10}>
+    <HStack spacing={8}>
       <Link
         as={NavLink}
         color="#192655"
         fontFamily="Merriweather Sans"
-        fontSize={isTabletOrMobile ? '18px' : '24px'}
+        fontSize={isTabletOrMobile ? '16px' : '24px'}
         fontWeight={'bold'}
         _hover={{
           color: '#fff',
@@ -30,7 +30,7 @@ export const AuthNav = () => {
         as={NavLink}
         color="#192655"
         fontFamily="Merriweather Sans"
-        fontSize={isTabletOrMobile ? '18px' : '24px'}
+        fontSize={isTabletOrMobile ? '16px' : '24px'}
         fontWeight={'bold'}
         _hover={{
           color: '#fff',

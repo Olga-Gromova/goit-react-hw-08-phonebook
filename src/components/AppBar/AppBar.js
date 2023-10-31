@@ -7,7 +7,7 @@ import { useAuth } from 'hooks/useAuth';
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <Flex as="header" align="center" h={70} px={8} py={4} bg="#89d3da">
+    <Flex as="header" align="center" h={70} px={4} py={4} bg="#89d3da">
       <Navigation />
       <Spacer />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}

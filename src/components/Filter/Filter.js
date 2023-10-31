@@ -23,7 +23,9 @@ export const Filter = () => {
         Find contacts by name:
       </Text>
       <Input
-        maxW="50%"
+        maxW="100%"
+        w="400px"
+        minW="100px"
         marginInlineStart="0px"
         type="text"
         name="filter"

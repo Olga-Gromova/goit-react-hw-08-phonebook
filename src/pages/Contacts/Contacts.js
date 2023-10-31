@@ -33,14 +33,17 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Box as="main" paddingY="10px" bg="#FDF8D7" h="100vh">
-      <Container maxW="100%" marginX="auto" paddingX="44px" bg="#FDF8D7">
+    <Box as="main" paddingY="5px" bg="#FDF8D7" h="100vh">
+      <Container maxW="100%" marginX="auto" 
+      // paddingX="44px" 
+      paddingX="10px"
+      bg="#FDF8D7">
         <Heading
           align="center"
           mb="10px"
           fontFamily="Merriweather Sans"
           fontWeight={400}
-          fontSize={isTabletOrMobile ? '24px' : '30px'}
+          fontSize={isTabletOrMobile ? '18px' : '30px'}
           color="#497a86"
         >
           Welcom in your Personal Phonebook
@@ -50,13 +53,13 @@ export default function Contacts() {
             align="center"
             fontFamily="Merriweather Sans"
             fontWeight={400}
-            fontSize={isTabletOrMobile ? '26px' : '28px'}
+            fontSize={isTabletOrMobile ? '16px' : '28px'}
             color="#497a86"
           >
             Please, input name & number for a creation a new contact
           </Heading>
           <ContactForm />
-          <Box padding="10px" maxWidth="660px" minWidth="300px">
+          <Box padding="10px" maxWidth="660px" minWidth="200px">
             <Heading
               align="center"
               fontFamily="Merriweather Sans"

@@ -22,7 +22,7 @@ export const RegistrationForm = () => {
   return (
     <Box
       as="form"
-      width={400}
+      minWidth={200}
       mx="auto"
       onSubmit={handleSubmit}
       textAlign="center"

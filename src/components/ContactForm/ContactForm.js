@@ -113,7 +113,7 @@ export const ContactForm = () => {
       as="form"
       maxWidth="660px"
       width="50%"
-      minWidth="300px"
+      minWidth="200px"
       padding="10px"
       onSubmit={handleSubmit}
       textAlign="center"
