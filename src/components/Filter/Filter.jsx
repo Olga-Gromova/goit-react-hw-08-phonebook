@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { setFilterValue } from 'redux/contacts/filterSlice';
-import { Text, HStack, Input } from '@chakra-ui/react';
+import { Text, VStack, Input } from '@chakra-ui/react';
 import { useMediaQuery } from 'react-responsive';
 
 export const Filter = () => {
@@ -12,20 +12,20 @@ export const Filter = () => {
   };
 
   return (
-    <HStack gap="5px" justify="space-between" mb="5px">
+    <VStack gap="5px" justify="space-between" mb="5px">
       <Text
-        minH="50%"
+        // minH="50%"
         fontFamily="Merriweather Sans"
         fontWeight={300}
-        fontSize={isTabletOrMobile ? '18px' : '24px'}
+        fontSize={isTabletOrMobile ? '16px' : '24px'}
         color="#497a86"
       >
         Find contacts by name:
       </Text>
       <Input
-        maxW="100%"
-        w="400px"
-        minW="100px"
+        maxW="400px"
+        w="100%"
+        minW="200px"
         marginInlineStart="0px"
         type="text"
         name="filter"
@@ -34,6 +34,6 @@ export const Filter = () => {
         borderWidth="1px"
         bg="#fff"
       />
-    </HStack>
+    </VStack>
   );
 };
