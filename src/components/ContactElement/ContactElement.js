@@ -23,7 +23,7 @@ export const ContactElement = ({ id, name, number }) => {
           w={{ base: '30px', md: '50px' }}
           h={{ base: '30px', md: '50px' }}
           borderRadius="50%"
-          bg="#acbcff"
+          bg="#80B3FF"
         />
         <VStack justify="flex-start" align="self-start" minW="100px" mr="10px">
           <Text
@@ -44,7 +44,7 @@ export const ContactElement = ({ id, name, number }) => {
       </HStack>
       <Circle
         size={{ base: '30px', md: '50px' }}
-        bg="#ACBCFF"
+        bg="#80B3FF"
         color="white"
         type="button"
         onClick={handleDelete}

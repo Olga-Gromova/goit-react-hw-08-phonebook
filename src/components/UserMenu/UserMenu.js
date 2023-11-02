@@ -25,7 +25,7 @@ export const UserMenu = () => {
       {isTabletOrMobile ? (
         <VStack alignItems="center" display="grid" justifyItems="end" gap="0">
           <Flex>
-            <Avatar bg="#acbcff" w="30px" h="30px" mr="10px" />
+            <Avatar bg="#80B3FF" w="30px" h="30px" mr="10px" />
             <Text
               as="span"
               fontFamily="Montserrat Alternates"
@@ -38,7 +38,7 @@ export const UserMenu = () => {
           </Flex>
           <Circle
             size="30px"
-            bg="#8EACCD"
+            bg="#80B3FF"
             type="button"
             onClick={handleLogOut}
             _hover={{
@@ -67,7 +67,7 @@ export const UserMenu = () => {
           >
             Welcome, {user.name}!
           </Text>
-          <Avatar bg="#acbcff" w="50px" h="50px" mr="10px" />
+          <Avatar bg="#80B3FF" w="50px" h="50px" mr="10px" />
           <Button
             type="button"
             borderRadius="50%"
@@ -77,7 +77,7 @@ export const UserMenu = () => {
             fontFamily="Merriweather Sans"
             fontSize="24px"
             fontWeight={'bold'}
-            backgroundColor="#8EACCD"
+            backgroundColor="#80B3FF"
             _hover={{
               bg: '#0cc0df',
               borderColor: 'transparent',

@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import BgShort from '../../images/BgShort.mp4';
 import {
   Heading,
   Flex,
@@ -36,13 +37,16 @@ export default function HomePage() {
       ) : (
         <Box
           as="main"
-          bg="#FDF8D7"
+            // bg="#FDF8D7"
+            
+           bg="#75C2F6" 
           position="relative"
           h="100vh"
           w="100%"
-          >    
+          > 
+          
             <Center>
-            <VStack gap={{base: "10px", md:"24px"}} mw="600px" mt="15px">
+              <VStack  gap={{ base: "10px", md: "24px" }} mw="600px" mt="15px">
               <Heading
                 as="h1"
                 position="relative"
@@ -75,7 +79,7 @@ export default function HomePage() {
                 fontFamily="Merriweather Sans"
                 fontSize={{ base: '16px', md: '24px' }}
                   fontWeight={'bold'}
-                  textShadow="0 0 7px #fFF,0 0 10px #fFF,0 0 21px #fFF,0 0 42px #d2e0fb,0 0 82px #d2e0fb,0 0 92px #d2e0fb,0 0 102px #d2e0fb,0 0 151px #d2e0fb"
+                  textShadow="0 0 7px #fFF,0 0 10px #fFF,0 0 21px #fFF,0 0 42px #98E4FF,0 0 82px #98E4FF,0 0 92px #98E4FF,0 0 102px #98E4FF,0 0 151px #98E4FF"
                 _hover={{
                   color: '#fff',
                   textShadow:
@@ -110,7 +114,7 @@ export default function HomePage() {
                 fontFamily="Merriweather Sans"
                 fontSize={{ base: '16px', md: '24px' }}
                   fontWeight={'bold'}
-                  textShadow="0 0 7px #fFF,0 0 10px #fFF,0 0 21px #fFF,0 0 42px #d2e0fb,0 0 82px #d2e0fb,0 0 92px #d2e0fb,0 0 102px #d2e0fb,0 0 151px #d2e0fb"
+                  textShadow="0 0 7px #fFF,0 0 10px #fFF,0 0 21px #fFF,0 0 42px #98E4FF,0 0 82px #98E4FF,0 0 92px #98E4FF,0 0 102px #98E4FF,0 0 151px #98E4FF"
                 _hover={{
                   color: '#fff',
                   textShadow:
@@ -124,10 +128,12 @@ export default function HomePage() {
                 to="/register"
               >
                 Register
-              </Link>
+                </Link>
+                
             </VStack>
-            </Center>
             
+            </Center>
+            <video src={BgShort} autoPlay muted bg="#FDF8D7"></video>
           
         </Box>
       
