@@ -34,8 +34,9 @@ export default function Contacts() {
 
   return (
     <Box as="main" paddingY="5px" bg="#FDF8D7" h="100vh">
-      <Container maxW="100%" marginX="auto" 
-     
+      <Container
+        maxW="100%"
+        marginX="auto"      
       paddingX="10px"
       bg="#FDF8D7">
         <Heading

@@ -1,7 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { register, logIn, logOut, refreshUser } from './operations';
+import { signUp, logIn, logOut, refreshUser } from './operations';
 import {
-  registerFulfilledReducer,
+  signUpFulfilledReducer,
   logInFulfilledReducer,
   logInRejectedReducer,
   logOutFulfilledReducer,
@@ -27,7 +27,7 @@ const authSlise = createSlice({
   initialState,
   extraReducers: builder =>
     builder
-      .addCase(register.fulfilled, registerFulfilledReducer)
+      .addCase(signUp.fulfilled, signUpFulfilledReducer)
       .addCase(logIn.fulfilled, logInFulfilledReducer)
       .addCase(logIn.rejected, logInRejectedReducer)
       .addCase(logOut.fulfilled, logOutFulfilledReducer)
@@ -35,15 +35,15 @@ const authSlise = createSlice({
       .addCase(refreshUser.fulfilled, refreshUserFulfilledReducer)
       .addCase(refreshUser.rejected, refreshUserRejectedReducer)
       .addMatcher(
-        isAnyOf(register.pending, logIn.pending, logOut.pending),
+        isAnyOf(signUp.pending, logIn.pending, logOut.pending),
         anyPendingReducer
       )
       .addMatcher(
-        isAnyOf(register.fulfilled, logIn.fulfilled),
+        isAnyOf(signUp.fulfilled, logIn.fulfilled),
         anyFulfilledReducer
       )
       .addMatcher(
-        isAnyOf(register.rejected, logIn.rejected, logOut.rejected),
+        isAnyOf(signUp.rejected, logIn.rejected, logOut.rejected),
         anyRejectedReducer
       ),
 });

@@ -9,8 +9,8 @@ import App from 'components/App/App';
 import './index.css';
 
 const colors = {
-  main: '#f6f6f6',
-  accent: '#k3k3k3',
+  main: '#DFCCFB',
+  accent: '#713ABE',
 };
 
 const theme = extendTheme({ colors });

@@ -33,7 +33,6 @@ export const LoginForm = () => {
     <Box
       as="form"
       minWidth={200}
-      
       mx="auto"
       onSubmit={handleSubmit}
       textAlign="center"
@@ -63,7 +62,7 @@ export const LoginForm = () => {
       </FormControl>
       <Button
         type="submit"
-        width="200px"        
+        width="200px"
         mt={4}
         borderColor="#89d3da"
         borderWidth="1px"

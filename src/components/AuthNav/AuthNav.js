@@ -1,16 +1,14 @@
 import { HStack, Link } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 
 export const AuthNav = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
   return (
     <HStack spacing={8}>
       <Link
         as={NavLink}
         color="#192655"
         fontFamily="Merriweather Sans"
-        fontSize={isTabletOrMobile ? '16px' : '24px'}
+        fontSize={{ base: '16px', md: '24px' }}
         fontWeight={'bold'}
         _hover={{
           color: '#fff',
@@ -30,7 +28,7 @@ export const AuthNav = () => {
         as={NavLink}
         color="#192655"
         fontFamily="Merriweather Sans"
-        fontSize={isTabletOrMobile ? '16px' : '24px'}
+        fontSize={{ base: '16px', md: '24px' }}
         fontWeight={'bold'}
         _hover={{
           color: '#fff',

@@ -11,7 +11,6 @@ import {
   CircularProgress,
   useToast,
 } from '@chakra-ui/react';
-import { useMediaQuery } from 'react-responsive';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -20,8 +19,6 @@ export const ContactForm = () => {
   const isContactAdded = useSelector(selectIsContactAdded);
   const dispatch = useDispatch();
   const toast = useToast();
-
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1190px)' });
 
   const isNumberDublicated = number => {
     return contacts.some(contact => contact.number === number);
@@ -37,7 +34,7 @@ export const ContactForm = () => {
     const newContact = contacts.find(contact => contact.name === name);
     if (newContact && isContactAdded) {
       toast({
-        position: 'top-right',
+        position: 'top',
         render: () => (
           <Box
             color="white"
@@ -46,7 +43,7 @@ export const ContactForm = () => {
             borderRadius="10px"
             textAlign="center"
           >
-            {name} is already in contacts
+            Contact wiht name: {name} have already included in your phonebook
           </Box>
         ),
       });
@@ -55,7 +52,7 @@ export const ContactForm = () => {
 
     if (isNumberDublicated(number)) {
       toast({
-        position: 'top-right',
+        position: 'top',
         render: () => (
           <Box
             color="white"
@@ -64,7 +61,7 @@ export const ContactForm = () => {
             borderRadius="10px"
             textAlign="center"
           >
-            {number} is already in contacts
+            The number: {number} have already included to your phonebook
           </Box>
         ),
       });
@@ -72,7 +69,7 @@ export const ContactForm = () => {
     }
     if (isContactAdded) {
       toast({
-        position: 'top-right',
+        position: 'top',
         render: () => (
           <Box
             color="white"
@@ -122,7 +119,7 @@ export const ContactForm = () => {
         <FormLabel
           fontFamily="Merriweather Sans"
           fontWeight={400}
-          fontSize={isTabletOrMobile ? '18px' : '24px'}
+          fontSize={{ base: '18px', md: '24px' }}
           color="#497a86"
         >
           Name
@@ -146,7 +143,7 @@ export const ContactForm = () => {
         <FormLabel
           fontFamily="Merriweather Sans"
           fontWeight={400}
-          fontSize={isTabletOrMobile ? '18px' : '24px'}
+          fontSize={{ base: '18px', md: '24px' }}
           color="#497a86"
         >
           Number

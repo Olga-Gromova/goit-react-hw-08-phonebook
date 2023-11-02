@@ -1,4 +1,4 @@
-export const registerFulfilledReducer = (state, action) => {
+export const signUpFulfilledReducer = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
 };
