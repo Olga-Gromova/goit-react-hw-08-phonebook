@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { signUp } from 'redux/auth/operations';
 import {
@@ -9,13 +9,12 @@ import {
   Button,
   useToast,
   Icon,
+  Container,
 } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Navigate } from 'react-router-dom';
 import { RiEyeLine, RiEyeOffLine } from 'react-icons/ri';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 const schema = yup
   .object({
@@ -33,16 +32,30 @@ export const RegistrationForm = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const isLogedIn = useSelector(selectIsLoggedIn);
 
   const [toggleInput, setToggleInput] = useState('password');
   const [toggleIcon, setToggleIcon] = useState(false);
-
   const dispatch = useDispatch();
 
   const registerSubmit = data => {
     dispatch(signUp(data))
       .unwrap()
+      .then(() =>
+        toast({
+          position: 'top',
+          render: () => (
+            <Box
+              color="white"
+              p={3}
+              bg="#5F8D4E"
+              borderRadius="10px"
+              textAlign="center"
+            >
+              Account of user {data.name} was created successfully
+            </Box>
+          ),
+        })
+      )
       .catch(error => {
         console.log(error);
         toast({
@@ -55,7 +68,8 @@ export const RegistrationForm = () => {
               borderRadius="10px"
               textAlign="center"
             >
-              Please, check again - some details are wrong
+              Please, check again - user with email {data.email} have alredy was
+              created eariler
             </Box>
           ),
         });
@@ -76,8 +90,7 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <>
-      {isLogedIn && <Navigate to="/contacts" replace />}
+    <Container>
       <Box
         as="form"
         minWidth={200}
@@ -116,7 +129,6 @@ export const RegistrationForm = () => {
         <FormControl isRequired>
           <FormLabel>Password</FormLabel>
           <Input
-            // type="password"
             type={toggleInput}
             {...register('password', { required: true })}
             name="password"
@@ -135,9 +147,9 @@ export const RegistrationForm = () => {
             }
           >
             {toggleIcon ? (
-              <Icon as={RiEyeOffLine} w={8} h={8} />
+              <Icon as={RiEyeOffLine} w={8} h={8} fill="#192655" />
             ) : (
-              <Icon as={RiEyeLine} w={8} h={8} />
+              <Icon as={RiEyeLine} w={8} h={8} fill="#192655" />
             )}
           </Button>
 
@@ -154,6 +166,6 @@ export const RegistrationForm = () => {
           Sign up
         </Button>
       </Box>
-    </>
+    </Container>
   );
 };

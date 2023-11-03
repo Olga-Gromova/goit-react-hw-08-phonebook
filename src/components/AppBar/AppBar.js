@@ -13,7 +13,7 @@ export const AppBar = () => {
       align="center"
       h={70}
       p={{ base: '10px', md: '16px' }}
-      bg="#98E4FF"
+      bg="#b3d9f3"
     >
       <Navigation />
       <Spacer />

@@ -33,14 +33,11 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Box as="main" paddingY="5px" bg="#FDF8D7" h="100vh">
-      <Container
-        maxW="100%"
-        marginX="auto"      
-      paddingX="10px"
-      bg="#FDF8D7">
+    <Box as="main" bg="#98b7d545" h="100vh">
+      <Container maxW="100%" marginX="auto" paddingX="10px" bg="#98b7d545">
         <Heading
           align="center"
+          pt="10px"
           mb="10px"
           fontFamily="Merriweather Sans"
           fontWeight={400}
@@ -75,14 +72,19 @@ export default function Contacts() {
               <Center flexDirection="column">
                 <Text
                   fontWeight="bold"
-                  color="#89d3da"
+                  color="#497a86"
                   fontFamily="Merriweather Sans"
                   fontSize={isTabletOrMobile ? '18px' : '24px'}
                   mb="10px"
                 >
                   ...Here is empty
                 </Text>
-                <Image src={emptyImg} alt="empty image" boxSize="150px" />
+                <Image
+                  src={emptyImg}
+                  alt="empty image"
+                  boxSize="150px"
+                  fill="#497a86"
+                />
               </Center>
             ) : (
               <div>

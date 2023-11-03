@@ -12,7 +12,6 @@ export const Filter = () => {
   return (
     <VStack gap="5px" justify="space-between" mb="5px">
       <Text
-       
         fontFamily="Merriweather Sans"
         fontWeight={300}
         fontSize={{ base: '18px', md: '24px' }}

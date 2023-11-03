@@ -67,26 +67,25 @@ export const ContactForm = () => {
       });
       return;
     }
-    if (isContactAdded) {
-      toast({
-        position: 'top',
-        render: () => (
-          <Box
-            color="white"
-            p={3}
-            bg="#188C69"
-            borderRadius="10px"
-            textAlign="center"
-          >
-            The new contact was created!
-          </Box>
-        ),
-      });
-    }
 
     dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
+
+    toast({
+      position: 'top',
+      render: () => (
+        <Box
+          color="white"
+          p={3}
+          bg="#5F8D4E"
+          borderRadius="10px"
+          textAlign="center"
+        >
+          The new contact wiht name: {name} was created successfully
+        </Box>
+      ),
+    });
 
     form.reset();
   };

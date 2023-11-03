@@ -8,19 +8,21 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import App from 'components/App/App';
 import './index.css';
 
+
 const colors = {
-  main: '#DFCCFB',
-  accent: '#713ABE',
+  main: '#98b7d545',
+  accent: '##80B3FF',
 };
 
 const theme = extendTheme({ colors });
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
-          <ChakraProvider theme={theme}>
+          <ChakraProvider theme={theme}>          
             <App />
           </ChakraProvider>
         </BrowserRouter>
