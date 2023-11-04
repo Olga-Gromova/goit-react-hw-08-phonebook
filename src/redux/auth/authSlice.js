@@ -13,6 +13,8 @@ import {
   anyRejectedReducer,
 } from './authSliceReducers';
 
+
+
 const initialState = {
   user: { name: null, email: null },
   token: null,
@@ -47,5 +49,6 @@ const authSlise = createSlice({
         anyRejectedReducer
       ),
 });
+
 
 export const authReducer = authSlise.reducer;

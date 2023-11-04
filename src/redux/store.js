@@ -14,6 +14,13 @@ import { contactsReducer } from './contacts/contactsSlice';
 import { filterReducer } from './contacts/filterSlice';
 import { authReducer } from './auth/authSlice';
 
+
+
+
+
+
+
+
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -28,6 +35,7 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
@@ -37,5 +45,8 @@ export const store = configureStore({
   middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
+
+
+
 
 export const persistor = persistStore(store);
