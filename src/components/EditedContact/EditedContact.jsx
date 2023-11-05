@@ -6,6 +6,9 @@ import { editContact } from 'redux/contacts/operations';
 import * as yup from 'yup';
 import { FormStyled } from './EditedContact.styled';
 import { CloseIcon } from '@chakra-ui/icons';
+import { editContactFulfilledReducer } from 'redux/contacts/contactsSliceReducers';
+
+
 
 const schema = yup
   .object({
@@ -37,10 +40,6 @@ const EditContact = ({ id, toggleEdit, name, number }) => {
       <input type="text" {...register('name')} autoFocus autoComplete="name" />
 
       <input type="text" {...register('number')} autoComplete="number" />
-      <button className="saveButton" type="submit">
-        <CloseIcon />
-      </button>
-
       <button className="saveButton" type="submit">
         <VscSaveAs />
       </button>
