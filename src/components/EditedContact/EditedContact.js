@@ -5,8 +5,7 @@ import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 import * as yup from 'yup';
 import { FormStyled } from './EditedContact.styled';
-import { CloseIcon } from '@chakra-ui/icons';
-import { editContactFulfilledReducer } from 'redux/contacts/contactsSliceReducers';
+
 
 
 
